@@ -10,7 +10,16 @@
     <meta name="google-adsense-account" content="ca-pub-9700242168605137">
 </head>
 <body>
-    <div class="container">
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html">홈</a>
+                <a href="history.html">역대 번호</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
         <h1>Lotto Number Generator</h1>
         <button id="theme-toggle-btn">Toggle Theme</button>
         <button id="generate-btn">Generate Numbers</button>
@@ -34,6 +43,7 @@
             </div>
             <button type="submit">Send Inquiry</button>
         </form>
+
         <hr style="margin: 2rem 0; border-color: var(--text-color);">
 
         <div id="disqus_thread"></div>
@@ -55,7 +65,14 @@
             })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Lotto Number Generator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>

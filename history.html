@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>역대 당첨 번호 - Lotto Number Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="google-adsense-account" content="ca-pub-9700242168605137">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9700242168605137"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html">홈</a>
+                <a href="history.html">역대 번호</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>역대 당첨 번호</h1>
+        <div class="table-container">
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>회차</th>
+                        <th>추첨일</th>
+                        <th>당첨 번호</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <hr style="margin: 2rem 0; border-color: var(--text-color);">
+
+        <h2>내 번호 당첨 조회</h2>
+        <form id="check-form">
+            <div class="number-input-container">
+                <input type="number" min="1" max="45" required>
+                <input type="number" min="1" max="45" required>
+                <input type="number" min="1" max="45" required>
+                <input type="number" min="1" max="45" required>
+                <input type="number" min="1" max="45" required>
+                <input type="number" min="1" max="45" required>
+            </div>
+            <button type="submit">조회하기</button>
+        </form>
+        <div id="check-result"></div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Lotto Number Generator. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="history.js"></script>
+</body>
+</html>

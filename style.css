@@ -5,6 +5,12 @@
     --box-shadow-color: rgba(0,0,0,0.1);
     --button-bg-color: #4CAF50;
     --button-text-color: white;
+    --header-bg: #ffffff;
+    --header-shadow: rgba(0, 0, 0, 0.1);
+    --link-color: #007bff;
+    --link-hover-color: #0056b3;
+    --fail-color: #dc3545;
+    --success-color: #28a745;
 }
 
 [data-theme="dark"] {
@@ -12,28 +18,68 @@
     --container-bg-color: #1e1e1e;
     --text-color: #ffffff;
     --box-shadow-color: rgba(255,255,255,0.1);
+    --header-bg: #1e1e1e;
+    --header-shadow: rgba(255, 255, 255, 0.1);
+    --link-color: #61dafb;
+    --link-hover-color: #21a1f2;
 }
-
 
 body {
     font-family: sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
+    margin: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+main.container {
+    flex-grow: 1;
     text-align: center;
     background-color: var(--container-bg-color);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px var(--box-shadow-color);
     transition: background-color 0.3s;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
+
+/* Header and Navigation */
+.site-header {
+    width: 100%;
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 4px var(--header-shadow);
+    padding: 1rem 0;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover {
+    color: var(--link-hover-color);
+}
+
 
 #generate-btn, #theme-toggle-btn {
     margin-top: 1rem;
@@ -46,6 +92,7 @@ body {
     border-radius: 5px;
 }
 
+/* Original Number Balls */
 .numbers-container {
     display: flex;
     justify-content: center;
@@ -71,14 +118,13 @@ body {
     padding: 1.5rem;
     border: 1px solid var(--box-shadow-color);
     border-radius: 8px;
-    background-color: var(--container-bg-color);
     text-align: left;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#partnership-form h2 {
+#partnership-form h2, main.container h1, main.container h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: var(--text-color);
@@ -98,8 +144,9 @@ body {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
-    width: calc(100% - 16px);
+    width: 100%;
     padding: 8px;
+    box-sizing: border-box;
     border: 1px solid var(--box-shadow-color);
     border-radius: 4px;
     background-color: var(--bg-color);
@@ -125,5 +172,110 @@ body {
 }
 
 #partnership-form button[type="submit"]:hover {
-    background-color: #368f3b; /* A slightly darker green for hover */
+    opacity: 0.9;
+}
+
+/* --- History Page Styles --- */
+.table-container {
+    overflow-x: auto;
+}
+
+#history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+#history-table th, #history-table td {
+    border: 1px solid var(--box-shadow-color);
+    padding: 0.75rem;
+    text-align: center;
+}
+
+#history-table th {
+    background-color: var(--container-bg-color);
+    font-weight: bold;
+}
+
+/* Small Number Balls for History Table */
+.numbers-container-small {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.number-ball-small {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Number Checker Form */
+#check-form {
+    margin-top: 1rem;
+}
+.number-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+.number-input-container input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid var(--box-shadow-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+#check-form button[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--link-color);
+    color: var(--button-text-color);
+}
+#check-form button[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+#check-result {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.result-success {
+    color: var(--success-color);
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.result-fail {
+    color: var(--fail-color);
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+
+/* --- Footer Styles --- */
+.site-footer {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+    background-color: var(--header-bg);
+    box-shadow: 0 -2px 4px var(--header-shadow);
 }
