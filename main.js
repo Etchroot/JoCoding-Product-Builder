@@ -34,3 +34,27 @@ generateBtn.addEventListener('click', () => {
         numbersDisplay.appendChild(numberBall);
     }
 });
+
+const twitterShareBtn = document.getElementById('twitter-share-btn');
+const facebookShareBtn = document.getElementById('facebook-share-btn');
+const copyLinkBtn = document.getElementById('copy-link-btn');
+
+twitterShareBtn.addEventListener('click', () => {
+    const url = window.location.href;
+    const text = '로또 번호 생성기로 행운의 번호를 받아보세요!';
+    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
+});
+
+facebookShareBtn.addEventListener('click', () => {
+    const url = window.location.href;
+    window.open(`http://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+});
+
+copyLinkBtn.addEventListener('click', () => {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+        alert('링크가 복사되었습니다!');
+    }, () => {
+        alert('링크 복사에 실패했습니다.');
+    });
+});

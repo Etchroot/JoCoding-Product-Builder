@@ -279,3 +279,26 @@ main.container {
     background-color: var(--header-bg);
     box-shadow: 0 -2px 4px var(--header-shadow);
 }
+
+.share-container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.share-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.share-btn:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
